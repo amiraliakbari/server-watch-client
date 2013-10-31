@@ -17,7 +17,7 @@ class Logger(object):
         return self.loggers[name]
 
     def close_all(self):
-        for logger in self.loggers:
+        for logger in self.loggers.values():
             logger.close()
 
     @classmethod
