@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 echo "Updating to latest version..."
 cd /usr/share/server-watch-client
