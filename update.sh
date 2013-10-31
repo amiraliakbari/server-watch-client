@@ -5,3 +5,4 @@ cd /usr/share/server-watch-client
 git stash save
 git pull
 git stash pop
+exit 0
