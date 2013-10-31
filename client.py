@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 import sys
-from mods_available.uptime_monitor import UptimeMonitor
 
 
 def run_modules():
-    # TODO: to be extracted to config files
-    modules = [
-        {'class': UptimeMonitor, 'servers': ['localhost']}
-    ]
+    import conf.scans
 
     # Running Module Scans
     count = {'mods': 0, 'scans': 0, 'failed_scans': 0}
-    for mod in modules:
+    for mod in conf.scans.enabled_modules:
         klass = mod['class']
         servers = mod.get('servers', [None])
         for server in servers:

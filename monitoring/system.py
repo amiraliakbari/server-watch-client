@@ -20,3 +20,12 @@ def system_uptime():
         else:
             raise ValueError('Using uptime in non-linux environments needs uptime module to be installed')
     return datetime.timedelta(seconds=uptime_seconds)
+
+
+def system_load():
+    if sys.platform.startswith('linux') and os.path.exists('/proc/uptime'):
+        with open('/proc/loadavg', 'r') as f:
+            p = f.readline().split()
+            r, e = p[3].split('/')
+            return {'avg1': p[0], 'avg5': p[1], 'avg15': p[2], 'runnable': r, 'existing': e}
+    raise ValueError('Load info is only available in linux')

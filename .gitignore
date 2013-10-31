@@ -40,3 +40,6 @@ nosetests.xml
 
 # Project Specific
 logs/*
+conf/*.py
+!conf/*.sample.py
+!conf/__init__.py
