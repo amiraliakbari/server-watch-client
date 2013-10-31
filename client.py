@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
+from logger import Logger
 
 
 def run_modules():
@@ -20,6 +21,9 @@ def run_modules():
             count['scans'] += 1
         count['mods'] += 1
     print('Run Summary: {mods} modules, {scans} total scans, {failed_scans} failed.'.format(**count))
+
+    # closing log files
+    Logger.get().close_all()
 
 
 if __name__ == '__main__':

@@ -16,6 +16,10 @@ class Logger(object):
             self.loggers[name] = ServerLogger(name)
         return self.loggers[name]
 
+    def close_all(self):
+        for logger in self.loggers:
+            logger.close()
+
     @classmethod
     def get(cls):
         """

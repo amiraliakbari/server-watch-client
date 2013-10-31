@@ -29,8 +29,5 @@ class BaseModule(object):
     def can_scan_remotes(cls):
         return False
 
-    def finish(self):
-        self.logger.close()
-
     def run(self):
         raise NotImplementedError()
