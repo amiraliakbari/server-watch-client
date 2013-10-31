@@ -24,7 +24,7 @@ This will copy the required files and also setup a cron task to run the client e
 After the initial installation, for getting the latest updates, you can run the following any time
 you want (application data is preserved):
 
-    ./usr/share/server-watch-client/update.sh
+    . /usr/share/server-watch-client/update.sh
 
 
 Configuration
