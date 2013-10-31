@@ -37,3 +37,6 @@ nosetests.xml
 
 # IDEs
 .idea/*
+
+# Project Specific
+logs/*
