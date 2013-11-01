@@ -2,6 +2,7 @@
 import datetime
 import os
 import sys
+import psutil
 
 
 def system_uptime():
@@ -29,3 +30,14 @@ def system_load():
             r, e = p[3].split('/')
             return {'avg1': p[0], 'avg5': p[1], 'avg15': p[2], 'runnable': r, 'existing': e}
     raise ValueError('Load info is only available in linux')
+
+
+def system_resources_summary():
+    nt = psutil.net_io_counters()
+    return {
+        'ram': psutil.virtual_memory().percent,
+        'swap': psutil.swap_memory().percent,
+        'disk': psutil.disk_usage('/').percent,
+        'net-sent': nt.bytes_sent,
+        'net-recv': nt.bytes_recv,
+    }

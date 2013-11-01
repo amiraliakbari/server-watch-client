@@ -11,9 +11,10 @@ def run_modules():
     for mod in conf.scans.enabled_modules:
         klass = mod['class']
         servers = mod.get('servers', [None])
+        params = mod.get('params')
         for server in servers:
             try:
-                mod_instance = klass(server=server)
+                mod_instance = klass(server=server, params=params)
                 mod_instance.run()
             except Exception as e:
                 print >> sys.stderr, str(e)

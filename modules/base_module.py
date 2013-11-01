@@ -7,10 +7,11 @@ from logger import Logger
 class BaseModule(object):
     LOG_FORMAT = '[{server}] [{mod}] [{dt}] {msg}'
 
-    def __init__(self, server=None):
+    def __init__(self, server=None, params=None):
         self.server = server if server is not None else 'localhost'
         self.logger = Logger.get().get_logger(self.server)
         self.mod_name = self.__class__.__name__
+        self.params = params or {}
 
         if self.server != 'localhost' and not self.can_scan_remotes():
             raise ValueError('{0} module can not perform remote scan!'.format(self.mod_name))

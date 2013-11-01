@@ -6,5 +6,7 @@
 enabled_modules = [
     #{'class': modules.local.UptimeMonitor},
     #{'class': modules.local.LoadMonitor},
-    #{'class': modules.remote.UptimeMonitor, 'servers': ['example.com']},
+    #{'class': modules.local.ResourceMonitor},
+    #{'class': modules.local.ServiceMonitor, 'params': ['apache2', 'ssh', 'mysql', 'postgresql-9.1']},
+    #{'class': modules.remote.PingMonitor, 'servers': ['example.com']},
 ]
