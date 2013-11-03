@@ -16,7 +16,7 @@ Installation
 To install the client, run these commands as root on the server(s) you want to monitor:
 
     cd /usr/share
-    git clone git@github.com:amiraliakbari/server-watch-client.git
+    git clone https://github.com/amiraliakbari/server-watch-client.git
     cd server-watch-client
     ./install.sh
 
